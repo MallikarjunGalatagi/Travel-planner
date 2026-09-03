@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import DestinationDetails from './pages/DestinationDetails';
 import ItineraryPlanner from './pages/ItineraryPlanner';
@@ -9,7 +9,7 @@ import { LocationProvider } from './context/LocationContext';
 function App() {
   return (
     <LocationProvider>
-      <BrowserRouter>
+      <Router>
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -17,7 +17,7 @@ function App() {
           <Route path="/planner" element={<ItineraryPlanner />} />
           <Route path="*" element={<Home />} />
         </Routes>
-      </BrowserRouter>
+      </Router>
     </LocationProvider>
   );
 }
